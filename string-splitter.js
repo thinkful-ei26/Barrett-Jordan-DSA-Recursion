@@ -7,23 +7,16 @@
 
 function stringSplitter(string, seperator, index) {
   // base case
-  if (index > 5) {
+  if (index > 4) {
     return '';
   }
   // general
   const sepIndex = string.indexOf(seperator, index);
-  // console.log(sepIndex);
-  // return string.slice(stringSplitter(string, ' '));
-  // return [sepIndex, ...stringSplitter(string, seperator, sepIndex+1)];
-  console.log([sepIndex, ...stringSplitter(string, seperator, sepIndex+1)]);
+
+  // console.log([sepIndex, ...stringSplitter(string, seperator, sepIndex+1)]);
+
   return [sepIndex, ...stringSplitter(string, seperator, sepIndex+1)];
 }
-const string = 'hello world';
-stringSplitter(string, '', 0);
-// console.log(string.slice(stringSplitter(string, ' ')[0]));
-// console.log(stringSplitter(string.slice(5), ' '));
-// console.log(string.slice(stringSplitter(string, ''))[5]);
-// console.log(string.slice(stringSplitter(string, '', 0)[1], stringSplitter(string, '', 0)[2]));
-// console.log([sepIndex, ...stringSplitter(string, seperator, sepIndex+1)]);
-//console.log(stringSplitter("Hello world", " ")); 
-// --> ["Hello", "world"]
+const string = 'hello world here I am';
+console.log(string.slice(stringSplitter(string, ' ', 0)));
+
